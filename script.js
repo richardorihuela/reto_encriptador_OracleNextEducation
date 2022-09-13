@@ -6,7 +6,7 @@ La letra "o" es convertida para "ober"
 La letra "u" es convertida para "ufat"
 */
 var texto;
-var letras = "abcdefghijklmnopqrstuvwxyz";
+var letras = "abcdefghijklmnopqrstuvwxyz ";
 
 /*Sacar los valores dentro de los textAreas*/
 var mensaje_descifrar = document.querySelector(".entrada-mensaje");
@@ -157,16 +157,42 @@ document.getElementById("alura-img").onclick = (g) => {
 
 document.getElementById("boton-azul").onclick = (f) => {
     f.preventDefault();
-    mensaje_copiar.value = cifrado(mensaje_descifrar.value);
-    mensaje_descifrar.value = "";
-    aparece();
+    mensaje_descifrar.value = mensaje_descifrar.value.toLowerCase();
+    if(!validarTexto(mensaje_descifrar.value))
+    {
+        swal({
+            text:"Introduzca solo letras sin acentos",
+            icon: "error",
+            button: "OK"
+        })
+        mensaje_descifrar.value = "";
+    }
+    else
+    {
+        mensaje_copiar.value = cifrado(mensaje_descifrar.value);
+        mensaje_descifrar.value = "";
+        aparece();
+    }
 }
 
 document.getElementById("boton-gris").onclick = (e) => {
     e.preventDefault();
-    mensaje_copiar.value = decifrar(mensaje_descifrar.value);
-    mensaje_descifrar.value = "";
-    aparece();
+    mensaje_descifrar.value = mensaje_descifrar.value.toLowerCase();
+    if(!validarTexto(mensaje_descifrar.value))
+    {
+        swal({
+            text:"Introduzca solo letras sin acentos",
+            icon: "error",
+            button: "OK"
+        })
+        mensaje_descifrar.value = "";
+    }
+    else
+    {
+        mensaje_copiar.value = decifrar(mensaje_descifrar.value);
+        mensaje_descifrar.value = "";
+        aparece();
+    }
 }
 
 document.getElementById("boton-copiar").onclick = (d) => {
@@ -174,5 +200,9 @@ document.getElementById("boton-copiar").onclick = (d) => {
     mensaje_copiar.select();
     navigator.clipboard.writeText(mensaje_copiar.value);
     mensaje_copiar.value = "";
-    alert("Texto copiado");
+    swal({
+            text:"Texto copiado",
+            icon: "success",
+            button: "OK"
+        });
 }
