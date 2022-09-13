@@ -6,7 +6,7 @@ La letra "o" es convertida para "ober"
 La letra "u" es convertida para "ufat"
 */
 var texto;
-var letras = "abcdefghijklmnopqrstuvwxyz ";
+var letras = "abcdefghijklmnopqrstuvwxyz 0123456789¡!¿?-_.:,;{}()[]<>/*-+#$%&";
 
 /*Sacar los valores dentro de los textAreas*/
 var mensaje_descifrar = document.querySelector(".entrada-mensaje");
