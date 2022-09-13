@@ -158,7 +158,7 @@ document.getElementById("alura-img").onclick = (g) => {
 document.getElementById("boton-azul").onclick = (f) => {
     f.preventDefault();
     mensaje_descifrar.value = mensaje_descifrar.value.toLowerCase();
-    if(!validarTexto(mensaje_descifrar.value))
+    /*if(!validarTexto(mensaje_descifrar.value))
     {
         swal({
             text:"Introduzca solo letras sin acentos",
@@ -168,17 +168,17 @@ document.getElementById("boton-azul").onclick = (f) => {
         mensaje_descifrar.value = "";
     }
     else
-    {
+    {*/
         mensaje_copiar.value = cifrado(mensaje_descifrar.value);
         mensaje_descifrar.value = "";
         aparece();
-    }
+    /*}*/
 }
 
 document.getElementById("boton-gris").onclick = (e) => {
     e.preventDefault();
     mensaje_descifrar.value = mensaje_descifrar.value.toLowerCase();
-    if(!validarTexto(mensaje_descifrar.value))
+    /*if(!validarTexto(mensaje_descifrar.value))
     {
         swal({
             text:"Introduzca solo letras sin acentos",
@@ -188,11 +188,11 @@ document.getElementById("boton-gris").onclick = (e) => {
         mensaje_descifrar.value = "";
     }
     else
-    {
+    {*/
         mensaje_copiar.value = decifrar(mensaje_descifrar.value);
         mensaje_descifrar.value = "";
         aparece();
-    }
+    /*}*/
 }
 
 document.getElementById("boton-copiar").onclick = (d) => {
