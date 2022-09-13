@@ -2,29 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Encriptador de Texto</title>
     <link rel="stylesheet" href="estilo.css">
-    <script src="script.js"></script>
 </head>
+<body>
     <header>
-
+        
     </header>
-    <body>
-        <div class="contenido">
-            <div class="campo-texto">
-                <form action="">
-                    <textarea name="entrada-mensaje" id="entrada-mensaje" cols="90" rows="25" autofocus="on"></textarea>
-                    <p class="alerta">Solo letras minúsculas y sin acentos</p>
-                    <input class="botones" type="button" value="Encriptar">
-                    <input class="botones" type="button" value="Desencriptar">
-                </form>
+    <main class="main">
+        <img class="alura-img" src="images/logo.png" alt="" id="alura-img">
+        <section class="campo-texto">
+            <form action="">
+                <textarea class="entrada-mensaje" id="entrada-mensaje" type="text" name="entrada-mensaje" maxlength="120" autofocus="on" placeholder="Introdusca su texto"></textarea>
+                <div class="minusculas">
+                    <img src="images/!.png" alt="!" class="imagen-alerta">
+                    <label for="input-texto">Solo letras minúsculas y sin acentos</label>
+                </div>
+                <div class="botones">
+                    <input class="boton-azul" type="submit" value="Encriptar" id="boton-azul">
+                    <input class="boton-gris" type="submit" value="Desencriptar" id="boton-gris">
+                </div>
+            </form>
+        </section>
+        
+        <section class="mensaje">
+            <!--img reemplazada por un mensaje-->
+            <div id="ningun-mensaje" class="ningun-mensaje">
+                <img class="detective" src="detective.png" alt="detective">
+                <h2>Ningún mensaje fue<br>encontrado</h2>
+                <h3>Ingresa el texto que desees encriptar o desencriptar.</h3>
             </div>
-        </div>
-        <div class="mensaje">
-
-        </div>
-    </body>
+            <div id="texto-cifrado">
+                <textarea class="mensaje-cifrado" type="text" name="mensaje-cifrado" id="mensaje-cifrado" placeholder="sin mensaje"></textarea>
+                <input type="submit" class="boton-copiar" value="Copiar" id="boton-copiar">
+            </div>
+        </section>
+    </main>
     <footer>
 
     </footer>
+    <script src="script.js"></script>
+</body>
 </html>

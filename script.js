@@ -7,6 +7,12 @@ La letra "u" es convertida para "ufat"
 */
 var texto;
 var letras = "abcdefghijklmnopqrstuvwxyz";
+
+/*Sacar los valores dentro de los textAreas*/
+var mensaje_descifrar = document.querySelector(".entrada-mensaje");
+var mensaje_copiar = document.querySelector(".mensaje-cifrado");
+document.getElementById("texto-cifrado").style.display = "none";
+
 function validarTexto(texto)
 {
     var minusculas = true;
@@ -131,3 +137,42 @@ document.write("decifrando texto</br>");
 document.write(decifrar(textoCifrado));
 */
 //</DECIFRAR>
+
+function aparece()
+{
+    document.getElementById("ningun-mensaje").style.display = 'none';
+    document.getElementById("texto-cifrado").style.display = "block";
+}
+function desaparece()
+{
+    document.getElementById("texto-cifrado").style.display = 'none';
+    document.getElementById("ningun-mensaje").style.display = 'block';
+}
+
+document.getElementById("alura-img").onclick = (g) => {
+    mensaje_descifrar.value = "";
+    mensaje_copiar.value = "";
+    desaparece()
+}
+
+document.getElementById("boton-azul").onclick = (f) => {
+    f.preventDefault();
+    mensaje_copiar.value = cifrado(mensaje_descifrar.value);
+    mensaje_descifrar.value = "";
+    aparece();
+}
+
+document.getElementById("boton-gris").onclick = (e) => {
+    e.preventDefault();
+    mensaje_copiar.value = decifrar(mensaje_descifrar.value);
+    mensaje_descifrar.value = "";
+    aparece();
+}
+
+document.getElementById("boton-copiar").onclick = (d) => {
+    desaparece();
+    mensaje_copiar.select();
+    navigator.clipboard.writeText(mensaje_copiar.value);
+    mensaje_copiar.value = "";
+    alert("Texto copiado");
+}

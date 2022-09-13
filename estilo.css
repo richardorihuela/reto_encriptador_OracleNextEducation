@@ -1,19 +1,514 @@
+/*https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox*/
 
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+body
+{
+    background: #aed3ea;
+}
+label
+{
+    color: #495057;
+    height: 18px;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    left: 24px;
+    line-height: 100%;
+    padding-left: 25px;
+    position: static;
+    top: 0px;
+    width: auto;
+
+}
+
+.alura-img
+{
+    bottom: 0%;
+    left: 30px;
+    position: absolute;
+    right: 37.43%;
+    top: 25px;
+}
 .alerta{
     font-size: 10px;
+    position: relative;
+    left: 0;
+}
+.alura-img
+{
+    width: 50px;
+    position: absolute;
+    left: 10px;
+    margin: 10px 0;
+}
+.boton-copiar
+{
+    align-items: flex-start;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    box-sizing: border-box;
+    color: #0A3871;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-grow: 1;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    height: 67px;
+    justify-content: center;
+    left: 25px;
+    line-height: 19px;
+    margin: 0px 8px;
+    order: 0;
+    padding: 24px;
+    position: absolute;
+    text-align: center;
+    top: 660px;
+    width: 336px;
 
+}
+.boton-azul
+{
+    align-items: flex-start;
+    background-color: #0A3871;
+    border-radius: 25px;
+    border-color: #0A3871;
+    display: flex;
+    flex-direction: row; /*filas*/
+    height: 67px;
+    left: 0;
+    padding: 24px;
+    position: static;
+    top: 0;
+    width: 328px;
+
+    /*Inside auto Layout*/
+    color: #fff;
+    /* 0 0 auto */
+    /* Tres valores: flex-grow | flex-shrink | flex-basis */
+    flex: none;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 19px;
+    order: 0;
+    flex-grow: 0;
+    margin: 0 24px;
+
+}
+.boton-gris
+{
+    align-items: flex-start;
+    background: #D8DFE8;
+    border-radius: 24px;
+    border-color: #0A3871;
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    color: #0A3871;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-grow: 0;
+    font-style: normal;
+    font-size: 28px;
+    font-weight: 600;
+    height: 67px;
+    justify-content: center;
+    left: 352px;
+    line-height: 19px;
+    margin: 0 24px;
+    order: 1;
+    padding: 24px;
+    position: static;
+    top: 0;
+    width: 328px;
 }
 .botones
 {
-    border-radius: 15px;
-    height: 50px;
-    margin: 0 30px;
-    width: 150px;
+    align-items: flex-start;
+    display: flex;
+    
+    flex-direction: row;
+    height: 67px;
+    left: 12%;
+    padding: 0px;
+    position: absolute;
+    width: 680px;
+    top: 685px;
 }
-.contenido
+.detective
 {
-    background: #bbb;
-    display: inline-block;
+    
+    margin: 0 auto;
+    width: 80%;
+}
+.entrada-mensaje
+{
+    background: transparent;
+    border: none;
+    color: #0A3871;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    height: 400px;
+    justify-content: baseline;
+    left: 15%;
+    line-height: 150%;
+    position: absolute;
+    resize: none;
+    text-transform: lowercase;
+    top: 168px;
+    width: 600px;
+}
+::placeholder { color: #0A3871; }
+.entrada-mensaje:focus
+{
+    border: none;
+    outline: none;
+}
+.imagen-alerta
+{
+    bottom: 0%;
+    left: 0%;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+}
+.main
+{
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+.mensaje
+{
+    background: #fff;
+    border-radius: 32px;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    height: 750px;
+    left: 70%;
+    padding-left: 20px;
+    padding-top: 80px;
+    position: absolute;
+    width: 400px;
+    top: 20px;
+}
+.mensaje h2
+{
+    align-self: stretch;
+    color: #343A40;
+    height: 58px;
+    flex: none;
+    flex-grow: 0;
+    font-family: Inter;
+    font-style: normal;
+    font-size: 27px;
+    font-weight: bold;
+    left: 0px;
+    line-height: 120%;
+    margin: 16px 0px;
+    order: 0;
+    position: static;
     text-align: center;
-    width: 60%;
+    top: 0px;
+    width: 336px;
+}
+.mensaje h3
+{
+    align-self: stretch;
+    color: #495057;
+    flex: none;
+    flex-grow: 0;
+    font-family: Inter;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 600;
+    height: 48px;
+    left: 0px;
+    line-height: 150%;
+    margin: 16px 0px;
+    order: 1;
+    position: static;
+    text-align: center;
+    top: 74px;
+    width: 336px;
+}
+.mensaje-cifrado
+{
+    background: transparent;
+    border: none;
+    color: #495057;
+    font-style: normal;
+    font-size: 22px;
+    font-weight: 600;
+    height: 781px;
+    left: 60px;
+    line-height: 150%;
+    position: absolute;
+    resize: none;
+    top: 52px;
+    width: 400px;
+}
+.mensaje-cifrado:focus
+{
+    border: none;
+    outline: none;
+}
+.minusculas
+{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 18px;
+    left: 13%;
+    padding: 0px;
+    position: absolute;
+    top: 651px;
+    width: auto;
+}
+.ningun-mensaje, .ningun-mensaje img
+{
+    padding-top: 40px;
+}
+
+@media only screen and (min-width: 1224px) and (max-width: 1590px)
+{
+    main
+    {
+        height: 100%;
+    }
+    .alura-img
+    {
+        left: 1rem;
+        width: 8%;
+    }
+    .botones
+    {
+        left: 5rem;
+        top: 34.5rem;
+    }
+    .boton-copiar
+    {
+        font-size: 24px;
+        height: 64 px;
+        top: 33rem;
+    }
+    .entrada-mensaje
+    {
+        left: 7.1rem;
+        top: 8rem;
+        word-wrap: break-word;
+    }
+    .mensaje
+    {
+        height: 38rem;
+        left: 56rem;
+        top: 1.5rem;
+    }
+    .mensaje-cifrado
+    {
+        left: 2.5rem;
+        width: 20rem;
+        word-wrap: break-word;
+    }
+    .minusculas
+    {
+        left: 7.3rem;
+        top: 32rem;
+    }
+    .ningun-mensaje
+    {
+        height: 20rem;
+        padding-left: 1rem;
+        padding-top: 0rem;
+    }
+    .ningun-mensaje img
+    {
+        padding-left: 1.5rem;
+        width: 18rem;
+    }
+    .boton-azul, .boton-gris
+    {
+        font-size: 24px;
+        height: 65px;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1023px)
+{
+    main
+    {
+        height: 100%;
+    }
+    .entrada-mensaje
+    {
+        left: 5.1rem;
+        top: 10rem;
+        width: 34rem;
+    }
+    .alura-img
+    {
+        left: 2.8rem;
+        top: 3rem;
+        width: 18%;
+    }
+    .botones
+    {
+        left: 4rem;
+        top: 32.5rem;
+    }
+    .boton-copiar
+    {
+        font-size: 24px;
+        height: 65px;
+        top: 24rem;
+        width: 32rem;
+    }
+    .mensaje
+    {
+        height: 100%;
+        left: 4.3rem;
+        padding: 0;
+        top: 40rem;
+        width: 36rem;
+    }
+    .mensaje-cifrado
+    {
+        flex: 1 1 auto;
+        height: auto;
+        left: 2.5rem;
+    }
+    .minusculas
+    {
+        left: 5.3rem;
+        top: 30rem;
+    }
+    .ningun-mensaje
+    {
+        border-radius: 32px;
+        height: auto;
+        padding-left: 5.5rem;
+        padding-top: 1rem;
+    }
+    .ningun-mensaje h2, h3
+    {
+        font-size: 24px;
+        height: auto;
+        margin: 0.5rem;
+        width: 80%;
+    }
+    .ningun-mensaje img
+    {
+        display: none;
+    }
+    .boton-azul, .boton-gris
+    {
+        font-size: 24px;
+        height: 65px;
+        margin: 0.5rem;
+        width: 280px;
+    }
+}
+@media only screen and (min-device-width: 300px) and (max-device-width: 480px)
+{
+    main
+    {
+        height: 100%;
+    }
+    label
+    {
+        font-size: 12px;
+    }
+    .entrada-mensaje
+    {
+        font-size: 22px;
+        left: 1.5rem;
+        top: 8rem;
+        width: 20rem;
+        word-wrap: break-word;
+    }
+    .alura-img
+    {
+        left: -1.5rem;
+        top: 1rem;
+        width: 25%;
+    }
+    .boton-azul, .boton-gris
+    {
+        font-size: 20px;
+        height: 65px;
+        margin: 0.5rem;
+        width: 320px;
+    }
+    .botones
+    {
+        flex-direction: column;
+        left: 1.5rem;
+        top: 25.5rem;
+    }
+    .boton-copiar
+    {
+        font-size: 20px;
+        height: 62px;
+        left: -0.5rem;
+        top: 8rem;
+        width: 320px;
+    }
+    .mensaje
+    {
+        height: 6rem;
+        left: 2rem;
+        padding: 0;
+        top: 37rem;
+        width: 20rem;
+    }
+    .mensaje-cifrado
+    {
+        font-size: 14px;
+        height: 8rem;
+        left: 1.5rem;
+        top: 0.5rem;
+        width: 17rem;
+        word-wrap: break-word;
+    }
+    .minusculas
+    {
+        left: 2.3rem;
+        top: 24rem;
+    }
+    .ningun-mensaje
+    {
+        border-radius: 32px;
+        height: auto;
+        padding-left: 1.5rem;
+        padding-top: 0.5rem;
+    }
+    .ningun-mensaje h2
+    {
+        font-size: 14px;
+        height: 100%;
+        margin: 0.5rem;
+        width: 80%;
+    }
+    .ningun-mensaje h3
+    {
+        font-size: 12px;
+        height: 100%;
+        margin: 0.5rem;
+        width: 80%;
+    }
+    .ningun-mensaje img
+    {
+        display: none;
+    }
 }
